@@ -22,7 +22,7 @@ app.use(express.json());
 var connection, channel;
 //Amqp Connection
 async function connect() {
-    const amqpServer = "amqps://jaspoexu:TSfNpnuivKaGhmzzuqEdVQcDtMiYmZOh@puffin.rmq2.cloudamqp.com/jaspoexu";
+    const amqpServer = "amqp://localhost:5672";
     connection = await amqplib.connect(amqpServer)
     channel = await connection.createChannel();
     await channel.assertQueue("PURCHASE");
